@@ -48,7 +48,7 @@ jobs:
         working-directory: environments/azure/dev
 
       - name: Run tfsec
-        uses: aquasecurity/tfsec-action@v1.8.0
+        uses: aquasecurity/tfsec-action@v1.0.3
         with:
           working_directory: environments/azure/dev
           additional_args: --soft-fail # Allows pipeline to continue for warnings, set to false to enforce strict blocking
