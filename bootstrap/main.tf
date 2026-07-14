@@ -30,6 +30,16 @@ resource "azurerm_federated_identity_credential" "github_actions_pr" {
   user_assigned_identity_id = azurerm_user_assigned_identity.github_actions.id
 }
 
+# Federated Identity Credential for GitHub Actions (Production Environment)
+resource "azurerm_federated_identity_credential" "github_actions_prod" {
+  name                      = "github-actions-prod"
+  audience                  = ["api://AzureADTokenExchange"]
+  issuer                    = "https://token.actions.githubusercontent.com"
+  subject                   = "repo:Sachindra-Cogniviti/agentic-infra:environment:production"
+  user_assigned_identity_id = azurerm_user_assigned_identity.github_actions.id
+}
+
+
 
 # Assign Contributor role to the User Assigned Identity at Subscription level
 resource "azurerm_role_assignment" "github_actions_contributor" {
