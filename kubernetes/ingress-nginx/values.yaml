@@ -1,0 +1,5 @@
+controller:
+  replicaCount: 1
+  service:
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-resource-group: "rg-dev-network"

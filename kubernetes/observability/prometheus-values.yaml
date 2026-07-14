@@ -1,0 +1,15 @@
+prometheusOperator:
+  replicaCount: 1
+
+alertmanager:
+  alertmanagerSpec:
+    replicas: 1
+
+prometheus:
+  prometheusSpec:
+    replicas: 1
+    enableRemoteWriteReceiver: true
+
+grafana:
+  replicaCount: 1
+  adminPassword: "admin"
